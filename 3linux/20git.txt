@@ -1,0 +1,8 @@
+分布式版本管理
+    1.出错回退
+    2.团队协作，冲突
+git init
+git status
+git add
+git commit -m "comment"
+

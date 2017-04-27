@@ -1,0 +1,20 @@
+一、配置、编译安装
+   1. 安装依赖软件
+        yum -y install gcc gcc-c++
+        mkdir tar
+        源码安装Apache的依赖apr，apr-util
+        tar zxvf apr-1.5.2.tar.gz
+        cd apr-1.5.2
+        ./configure --prefix=/usr/local/apr-1.5.2
+        make && make install
+
+        tar zxvf apr-util-1.5.4.tar.gz
+        cd apr-util-1.5.4
+        ./configure --prefix=/usr/local/apr-util-1.5.4 --with-apr=/usr/local/apr-1.5.2
+        make && make install
+
+        安装pcre
+        tar zxvf pcre-8.39.tar.gz
+        cd pcre-8.39
+    2.安装编译软件
+二、集成xammp
