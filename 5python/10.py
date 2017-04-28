@@ -1,12 +1,31 @@
 #coding=utf-8
 '''
 学以致用，边学边练，在开发中发挥强大的生产力
-https://www.python.org/downloads/release/
+下载python解释器： https://www.python.org/downloads/release/
 '''
 import sys
-#变量
+print("hello world")
+#注释，增加程序可读性
+'''
+多行注释
+'''
+'''
+变量以及类型
+    变量是存储数据的
+    变量类型  type(变量)
+    数字：int（有符号整型）、long（长整型）、float（浮点型）、complex（复数）
+    布尔类型：True、False
+    字符串
+    列表list
+    元祖tuple
+    字典dictionary
+运算符
+    算术运算符：//    取商的整数部分
+    **  幂运算2的3次方
+'''
 a = 12
-print a
+b = 5
+print a + b
 print id(a)         #变量a在内存中的编号
 print type(a)     #a的类型
 
