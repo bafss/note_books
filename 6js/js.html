@@ -1,0 +1,64 @@
+<!--事件委托-->
+<style>
+    *{margin:0;padding:0;}
+    #table-body{border-collapse: collapse;}
+    #table-body td{border:1px solid black;}
+</style>
+<table id="table-body">
+    <tr>
+        <td class="tag" data-tag="name">1</td>
+        <td class="tag" data-tag="pwd">2</td>
+        <td><input type="button" class="del" value="删除" st="2017-05"></td>
+    </tr>
+</table>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+    $(function(){
+        var baseurl = window.location.href.split("?")[0];
+        console.log(baseurl);
+        url = "./js_back_data.php"
+        $("#table-body").on("click",".del",function(e){
+            var st = $(e.target).attr("st");
+            console.log(st);
+            data = ''
+            tr = $(this).parents("tr");
+            console.log(tr)
+            tds = tr.find(".tag")
+            console.log(tds.length)
+            tds.each(function(k,v){
+                console.log(k,v)
+                key = $(this).attr('data-tag');
+                value = $(this).text();
+                data += key + "=" +  value + "&";
+            });
+            data = data.slice(0,-1);
+            console.log(data);
+            $.ajax({
+                url : url,
+                type : 'post',
+                data: data,
+                dataType: 'json',
+                success : successfun
+            });
+        });
+        function successfun(data){
+            console.log(data)
+            res = data.res;
+            msg = data.msg;
+            console.log(res,msg)
+            for(var k in msg){
+                console.log(k,msg[k])
+            }
+            html = "";
+            html += "<tr>";
+            $.each(msg,function(k,v){
+                console.log(k,v)
+                html += "<td>"
+                html += v
+                html += "</td>"
+            });
+            html += "</tr>";
+            $("#table-body").append(html)
+        }
+    });
+</script>
