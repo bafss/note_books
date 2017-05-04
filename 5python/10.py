@@ -25,10 +25,12 @@ print("hello world")
     算术运算符：//    取商的整数部分
     **  幂运算2的3次方
 '''
+"""
 num = '12'
 num2 = "12a"
 print(num.isdigit())
 print(num2.isdigit())
+"""
 """
 a = 12
 b = 5
@@ -67,6 +69,7 @@ print(str.encode(encoding='utf8'))
 print(str.encode(encoding='utf8').decode(encoding='utf8'))
 """
 #列表
+"""
 names = ['沙瑞金','侯亮平','李达康']
 print(names[1:3])   #切片
 print(names[-1])   #切片
@@ -108,7 +111,9 @@ print(names)
 print(name3)
 for name in names:
     print (name)
+"""
 #元祖.就是列表，只能看不能改。只有count和index方法
+"""
 names4 = ('孙悟空','猪八戒')
 print(names4[0])
 print(names4.count("猪八戒"))
@@ -116,6 +121,7 @@ print(names4.index('猪八戒'))
 print(len(names4))
 for key,value in enumerate(names4):
     print(key,value)
+"""
 """
 
 a = 5
@@ -226,9 +232,15 @@ def add(x,y):
 res = add(3,5)
 print (res)
 """
+#字符串函数
 
-
-
+name = 'llz'
+print(name.capitalize())#首字母大写
+print(name.count('l'))#字母个数
+print(name.center(10,'-'))#打印10个字符，字符串放中间
+print(name.endswith('z'))#是否以z结尾
+space = "a\tc"
+print(space.expandtabs(10))#把制表符替换为几个空格
 
 
 
