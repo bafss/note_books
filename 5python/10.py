@@ -1,8 +1,11 @@
-#coding=utf-8
+#python3
 '''
 学以致用，边学边练，在开发中发挥强大的生产力
 下载python解释器： https://www.python.org/downloads/release/
 '''
+"""
+机器指令-》cpu
+"""
 '''
 import sys
 print("hello world")
