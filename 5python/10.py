@@ -6,6 +6,39 @@
 """
 机器指令-》cpu
 """
+#输入、输出
+#用户输入  输出函数
+#字符在计算机存储为0和1，ASCII码1个字节，gbk汉字为2个字节，utf-8汉字3个字节，是对unicode万国码（都是2个字节）的优化和压缩
+'''
+notice = "请输入:"
+#print notice
+str = input(notice)
+type_str = type(str)
+print (type_str)
+num = int(str)
+type_num = type(num)
+print (type_num)
+'''
+"""
+print ("%s is week %d"%('today',1))
+print('''
+
+多行
+输出
+''')
+
+name = 'llz'
+age = 26
+print(
+'''
+{_name}
+{_age}
+'''.format(
+        _name = name,
+        _age=age
+    )
+)
+"""
 '''
 import sys
 print("hello world")
@@ -134,38 +167,7 @@ min = b if a > b else a
 print("max:",max)
 print("min:",min)
 """
-#用户输入  输出函数
-#字符在计算机存储为0和1，ASCII码1个字节，gbk汉字为2个字节，utf-8汉字3个字节，是对unicode万国码（都是2个字节）的优化和压缩
-'''
-notice = "请输入:"
-#print notice
-str = input(notice)
-type_str = type(str)
-print (type_str)
-num = int(str)
-type_num = type(num)
-print (type_num)
-'''
-"""
-print ("%s is week %d"%('today',1)) 
-print('''
 
-多行
-输出
-''')
-
-name = 'llz'
-age = 26
-print(
-'''
-{_name}
-{_age}
-'''.format(
-        _name = name,
-        _age=age
-    )
-)
-"""
 #流程控制
 '''
 import getpass
