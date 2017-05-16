@@ -5,3 +5,6 @@
 #输入、输出
 name = input()
 print("你好",name)
+num = input()
+num = int(num)
+print(type(num))

@@ -1,11 +1,25 @@
 #数字
-
+#id(对象)	对象的内存地址
+n1 = 123
+n2 = 123
+print(id(n1))
+print(id(n2))
 #字符串
 str = "hello"
+
 print('h' in str)
 print('h' not in str)
+str = "你很nice"
+for v in str:
+	print(v)
+	b_16 = bytes(v,'utf-8')#字节类型,16进制
+	print(b_16)
+	print(b_16.decode())
+	for b_10 in b_16:
+		print(b_10,bin(b_10))#bin()二进制表示
 
 temp = "small\tend"
+print(isinstance(temp,int))
 print(type(temp))
 print(temp.upper())
 print(temp.upper().lower())
@@ -36,9 +50,17 @@ for v in str:
 	print(v)
 #list列表
 arr = ['hello','china']
+for k,v in enumerate(arr,2):#2起始序号
+	print(k,v)
+	print(arr[k-2])
 for v in arr:
 	print(v)
-
+rangelist = range(0,10,2)
+print(rangelist)
+rangelist = range(10,1,-2)
+print(rangelist)
+for i in rangelist:
+	print(i)
 print(arr[1:len(arr)])#切片
 arr.append('by')
 print(arr)#追加
@@ -56,8 +78,86 @@ arr.reverse()
 print(arr)
 arr.sort()
 print(arr)
+del(arr[2])
+print(arr)
+del(arr[1:4])
+print(arr)
 print('hello' in arr)
 print('hello' not in arr)
 #元祖
 
 #字典
+stu = {
+	'name':'llz',
+	'age':26
+}
+print(stu['age'])
+for key,value in stu.items():
+	print(key,value)
+for key in stu:
+	print(stu[key])
+print(stu.keys())
+print(stu.values())
+print(stu.items())
+stu.clear()
+print(stu)
+default = stu.get('gender','male')
+print(default)
+insert = {
+	'hobby':'nv'
+}
+stu = {'name':'llz'}
+stu.update(insert)
+print(stu)
+del(stu['hobby'])
+print(stu)
+stu['hobby'] = 'nv'
+print(stu)
+old_dic = {
+	'#1':11,
+	'#2':22,
+	'#3':100,
+}
+new_dic = {
+	'#1':33,
+	'#4':22,
+	'#7':100,
+}
+#要求：新旧都有删除旧的，新中没有，删除旧的，新有旧没有，添加
+print('c' in ['c'])
+new_keys = new_dic.keys()
+old_keys = old_dic.keys()
+old_too_new_keys = set(old_keys) & set(new_keys)
+print(old_too_new_keys)
+for i in old_too_new_keys:
+	old_dic[i] = new_dic[i]
+old_del_keys = set(old_keys) - set(new_keys)
+print(old_del_keys)
+for i in old_del_keys:
+	del(old_dic[i])
+old_add_keys = set(new_keys) - set(old_keys)
+for i in old_add_keys:
+	old_dic[i] = new_dic[i]
+print(old_dic)
+copy1 = [0,1,[1,2,[3,[5]]]]
+copy2 = copy1#只是引用地址，相当于php的引用赋值
+print(copy1,id(copy1))
+print(copy2,id(copy2))
+copy2[1] = 8
+print(copy1)
+print(copy1)
+import copy
+copy3 = copy.deepcopy(copy1)
+print(copy3)
+copy3[1] = 9
+print(copy1)
+print(copy3)
+#集合，类似数学的集合
+se = set()
+se.add(5)
+print(se)
+s1 = {1,2,3,5}
+s2 = {1,5,6}
+print(s1 - s2)
+print(s2 - s1)
+print(s1 & s2)
